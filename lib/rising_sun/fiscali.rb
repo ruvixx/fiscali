@@ -37,15 +37,15 @@ module RisingSun
       end
 
       def use_forward_year!
-        @fy_forward = true
+        Thread.current[:fy_forward] = true
       end
 
       def reset_forward_year!
-        @fy_forward = false
+        Thread.current[:fy_forward] = false
       end
 
       def uses_forward_year?
-        @fy_forward || false
+        Thread.current[:fy_forward] || false
       end
 
     end
